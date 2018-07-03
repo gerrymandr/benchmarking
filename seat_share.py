@@ -33,6 +33,53 @@ bins = [0,1,2,3]
 ax1.hist(seat_shares_full, bins=bins, density=True)
 ax1.set_title('full ensemble')
 ax1.set_xticks(bins)
-ax2.hist(seat_shares_sampled, bins=bins, density=True)
+ax2.hist([seat_shares_sampled[0]], bins=bins, density=True)
 ax2.set_title('sampled ensemble')
-ax2.set_xticks(bins)   
+ax2.set_xticks(bins)
+'''
+# define animation function which updates the plot
+def animate(i):
+    # define animation function which updates the plot
+    def animate(i):
+        # determine which points are in current t-axis cross section
+        current_t = t_range[i]
+        displayed_indices = [j for j in range(len(t)) \
+             if (t[j] >= current_t) and (t[j] <= current_t + width)]
+        x_disp = [x[j] for j in displayed_indices]
+        y_disp = [y[j] for j in displayed_indices]
+        
+        # update points on scatter plot
+        pts = np.array(list(zip(x_disp, y_disp)))
+        if len(pts) == 0:
+            pts = np.zeros((0,2))
+        scat.set_offsets(pts)
+        
+        # update comparison line and best fit line, if present
+        if comparison_line_info != None:
+            comparison_line.set_data(get_comparison_line_points(current_t))
+        if best_fit_line_info != None:
+            best_fit_line.set_data(get_best_fit_line_points(x_disp, y_disp))
+        
+        # update text describing current state in time
+        if width == 0:
+            txt = '%s = %0.2f' % (t_info['label'], current_t)
+        else:
+            txt = '%s between %0.2f and %0.2f' % (t_info['label'],
+                                                  current_t, current_t + width)
+        t_text.set_text(txt)
+        
+        return scat, comparison_line, best_fit_line, t_text, legend
+
+    # determine time b/t frames and create animation, saving if necessary
+    interval = duration * 1000 / (len(t_range) - 1)
+    anim = animation.FuncAnimation(fig, animate,
+                                   frames=len(t_range),
+                                   interval=interval, blit=True)
+    
+    return scat, comparison_line, best_fit_line, t_text, legend
+
+# determine time b/t frames and create animation, saving if necessary
+anim = animation.FuncAnimation(fig, animate,
+                               frames=len(t_range),
+                               interval=100, blit=True) 
+'''
