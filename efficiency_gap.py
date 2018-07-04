@@ -33,12 +33,11 @@ canonical_sample = {}
 for key in sample_freq.keys():
     canonical_sample[tuple(canonical_form(key))] = sample_freq[key]
 
-print(canonical_sample)
+#print(canonical_sample)
 
 enum_freqs = get_enum_freqs(full_ensemble, canonical_sample)
-print(enum_freqs)
+#print(enum_freqs)
 
-
-plt.bar(enum_freqs.keys(), enum_freqs.values(), color='red')
-plt.ylim([0, 2])
+plt.scatter(enum_freqs.keys(), enum_freqs.values())
+plt.ylim(0,8)
 plt.show()
