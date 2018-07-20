@@ -1,6 +1,5 @@
-Each file contains 100,00 steps in RunDMCMC. Each step is a 3 district partition of the graph 
-from the Fifield et al dataset. Each run starts from a random partition generated using code 
-from Gerrymandr/spanning-trees.
+Each file contains 1,000,000 steps in RunDMCMC starting from an arbitrary districting plan. 
+Each step is a 3 district partition of the graph from the Fifield et al dataset. 
 
 The only constraints are that districts must be contiguous and they can't be destroyed.
 
