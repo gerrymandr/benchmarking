@@ -1,4 +1,4 @@
-Each file contains 100,00 steps in RunDMCMC, starting from an arbitrary partition.
+Each file contains 100,000 steps in RunDMCMC, starting from an arbitrary partition.
 Each step is a 3 district partition of the graph from the Fifield et al dataset. 
 
 The only constraints are that districts must be contiguous and they can't be destroyed.
