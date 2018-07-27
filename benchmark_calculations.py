@@ -165,7 +165,7 @@ def mean_median(graph, partitions, dv_name = 'DV', rv_name = 'RV'):
 
 #mean thirdian score for democrats
 #requires votes by vtd for each party
-def mean_thi(graph, partitions, dv_name = 'DV', rv_name = 'RV'):
+def mean_thirdian(graph, partitions, dv_name = 'DV', rv_name = 'RV'):
 	output = list()
 	for part in partitions:
 		num_dists = len(set(part))
@@ -175,7 +175,7 @@ def mean_thi(graph, partitions, dv_name = 'DV', rv_name = 'RV'):
 			dem_totals[part[node]-1] += graph.nodes[node][dv_name]
 			rep_totals[part[node]-1] += graph.nodes[node][rv_name]
 		dem_vote_percents = [1.0 * dem_totals[x] / (dem_totals[x] + rep_totals[x]) for x in range(num_dists)]
-		thirdian_index = round((2*len(dem_vote_percents)) / 3)
+		thirdian_index = round((len(dem_vote_percents)) / 3)
 		thirdian = sorted(dem_vote_percents)[thirdian_index]
 		output.append(np.mean(dem_vote_percents) - thirdian)
 	return output
