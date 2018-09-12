@@ -5,9 +5,13 @@ Much of our data is stored as .p files using the pickle import. Each file repres
 data structure which be perfectly maintained when imported into python. The following code snippet
 will import a .p file and assign its information to a variable 'data'.
 
+
 import pickle
+
 import bz2
+
 data = pickle.load(bz2.BZ2File(new_file_name,'rb'))
+
 
 
 Partitions of a graph into districts follow this canonical form:
