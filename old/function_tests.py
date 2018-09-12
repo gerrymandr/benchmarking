@@ -10,7 +10,7 @@
 #This is important because we often need the computer to  be able to compare two districting plans and evaluate whether they are the same, but each plan has many possible relabelings.  
 #Canonical form ensures that any two relabelings of the same districting plan are not mistaken for unique plans in future functions.  
 #For more on canonical form, see the top-level ReadMe. 
-#For moreon using pickles in python, see the top-level ReadMe.
+#For more on using pickles in python, see the top-level ReadMe.
 
 #2. get_enum_freqs
 #This function runs a sample of districting plans against the full enumeration of possible districting plans, 
