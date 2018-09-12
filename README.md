@@ -3,7 +3,8 @@ Welcome to the benchmarking repo!
 
 Much of our data is stored as .p files using the pickle import. Each file represents a single python
 data structure which be perfectly maintained when imported into python. The following code snippet
-will import a .p file and assign its information to a variable 'data'.
+will import a .p file and assign its information to a variable 'data':
+
 
 
 import pickle
@@ -11,6 +12,7 @@ import pickle
 import bz2
 
 data = pickle.load(bz2.BZ2File(new_file_name,'rb'))
+
 
 
 
