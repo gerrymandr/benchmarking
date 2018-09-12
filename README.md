@@ -6,9 +6,7 @@ data structure which be perfectly maintained when imported into python. The foll
 will import a .p file and assign its information to a variable 'data'.
 
 import pickle
-
 import bz2
-
 data = pickle.load(bz2.BZ2File(new_file_name,'rb'))
 
 
