@@ -16,7 +16,7 @@ def get_enum_freqs(enumeration, sample):
     enum_freqs = {}
     for i, item in enumerate(enumeration):
         if item not in sample.keys():
-            # if the partition wasn't in the sample, assign frequency 0
+            # if the partition wasn't in the sample, assign frequency zero
             enum_freqs[i]= 0
         else:
             # if the partition was in the sample, assign the frequency with which it appeared (from dictionary input)
