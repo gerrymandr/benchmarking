@@ -1,3 +1,5 @@
+# See main.py in the plots folder for an updated example of producing benchmarking plots.
+
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib import animation
